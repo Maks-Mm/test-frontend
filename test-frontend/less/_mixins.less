@@ -1,0 +1,18 @@
+//test-frontend/less/_mixins.less
+// Reusable mixin for clearfix
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Responsive text
+.responsive-text(@size, @lineHeight) {
+  font-size: @size;
+  line-height: @lineHeight;
+  @media (max-width: 768px) {
+    font-size: (@size * 0.85);
+  }
+}
