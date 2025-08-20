@@ -1,4 +1,9 @@
-//test-frontend/less/_slider.less
+// Zmienne, aby ułatwić zarządzanie kodem
+@padding-base: 15px;
+@secondary-color: #5bc0de;
+@carousel-height: 400px;
+@product-image-height: 520px; // 400px + 30%
+
 #hero {
   padding: @padding-base * 2 0;
   background: @secondary-color;
@@ -12,10 +17,28 @@
     .responsive-text(18px, 1.6);
   }
 
-  .slick-slide {
-    img {
-      max-height: 400px;
-      margin: 0 auto;
-    }
+  .carousel {
+    min-height: @carousel-height;
+    width: 100%;
   }
+
+  .slick-list, .slick-track {
+    min-height: @carousel-height;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: @carousel-height;
+  }
+}
+
+.product-sections {
+    margin-top: 20px;
+}
+
+.product-container img {
+    width: 100%;
+    height: auto;
+    max-height: @product-image-height;
 }

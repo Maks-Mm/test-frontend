@@ -1,14 +1,15 @@
-//test-frontend/js/main.js
+// test-frontend/js/main.js
 
 $(document).ready(function () {
-    // 1. Initialize Slick Slider
-    $('.your-slider-class').slick({
+    // 1. Initialize Slick Slider with RTL
+    $('.carousel').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
         dots: true,
         arrows: true,
+        rtl: true, // This is the new line you requested
         responsive: [
             {
                 breakpoint: 768,
