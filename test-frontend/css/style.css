@@ -16,3 +16,22 @@ header.navbar.navbar-top .navbar-nav > li > a:hover {
   color: #b0e1ef !important; /* lighter blue hover */
   background-color: transparent !important;
 }
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px; /* space between containers */
+}
+
+.product-container img {
+  width: 30%;              /* 3 images per row */
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+/* Center buttons */
+.product-sections .btn {
+  margin: 0 5px;
+}
