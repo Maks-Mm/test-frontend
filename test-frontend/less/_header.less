@@ -1,21 +1,39 @@
 //test-frontend/less/_header.less
 header {
   background: @primary-color;
+
   .navbar {
     margin-bottom: 0;
     border-radius: 0;
+
     .navbar-brand {
-      color: #fff;
+      color: @white;
       font-weight: bold;
       &:hover {
         color: lighten(@secondary-color, 20%);
       }
     }
+
     .nav > li > a {
-      color: #fff;
+      color: @white;
       &:hover {
         background: darken(@primary-color, 5%);
       }
     }
+
+    &.navbar-top {
+      background-color: @primary-color;
+      border: none;
+
+      .nav > li > a {
+        color: @white;
+        font-weight: normal;
+      }
+      .nav > li > a:hover {
+        color: lighten(@secondary-color, 20%);
+        background: transparent;
+      }
+    }
   }
 }
+
