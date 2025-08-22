@@ -35,3 +35,39 @@ header.navbar.navbar-top .navbar-nav > li > a:hover {
 .product-sections .btn {
   margin: 0 5px;
 }
+#categories-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#categories-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* small spacing above */
+}
+
+.promotion-card {
+  width: 90%;           /* responsive width instead of 1400px */
+  max-width: 1400px;    /* max width */
+  height: 160px;
+  background-color: #337ab7;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* Przesunięcie wyszukiwarki w prawo */
+#slider-mid {
+  width: 36%;
+  display: flex;
+  justify-content: flex-end; /* zamiast center */
+  align-items: center;
+}
