@@ -1,0 +1,45 @@
+//test-frontend/less/_categories.less
+.category-page {
+  margin-top: 40px;
+
+  .categories-panel {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin-bottom: 10px;
+        a {
+          text-decoration: none;
+          color: #333;
+          &:hover { color: #337ab7; }
+        }
+      }
+    }
+  }
+
+  .products-panel {
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .product {
+        width: calc(33.333% - 10px);
+        img {
+          width: 100%;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .products-panel .product-grid .product { width: 48%; }
+    .categories-panel { margin-bottom: 20px; }
+  }
+}

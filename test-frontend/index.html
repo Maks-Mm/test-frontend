@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zadanie Front-End</title>
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
-  <!-- Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Bootstrap -->
@@ -220,6 +219,18 @@
       #slider-widget { flex-direction: column; gap: 20px; }
       .product-container img { width: 80%; max-height: 400px; }
     }
+
+    /* Category Page */
+    #category-page {
+      display: none;
+      margin-top: 30px;
+    }
+    .categories-panel ul { list-style: none; padding: 0; }
+    .categories-panel li { margin: 12px 0; }
+    .categories-panel a { text-decoration: none; color: #337ab7; }
+    .categories-panel a:hover { color: #2d6da3; }
+    .products-panel .product-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .products-panel .product img { width: 100%; max-width: 200px; object-fit: cover; }
   </style>
 </head>
 
@@ -245,7 +256,8 @@
         <a class="navbar-brand" href="#"><img src="https://img.freepik.com/premium-vector/fashion-logo-template-design_278222-5475.jpg" width="60" height="60" alt="Logo"></a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="#">Damskie buty skórzane</a></li>
+         <li><a href="category.html">Damskie buty skórzane</a></li>
+
         <li><a href="#">Bony podarunkowe</a></li>
         <li><a href="#">Nowości</a></li>
         <li><a href="#">Bestsellery</a></li>
@@ -260,79 +272,94 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <div class="container">
+  <main class="container">
 
-      <!-- Hero Carousel -->
-      <section id="hero" class="row text-center">
-        <div class="carousel">
-          <div><img src="https://plus.unsplash.com/premium_photo-1708110920881-635419c3411f?w=1200" alt="Slider 1"></div>
-          <div><img src="https://images.unsplash.com/photo-1612731486606-2614b4d74921?w=1200" alt="Slider 2"></div>
-          <div><img src="https://images.unsplash.com/photo-1549298222-1c31e8915347?w=600" alt="Slider 3"></div>
+    <!-- Category Page (Hidden initially) -->
+    <section id="category-page" class="category-page container">
+      <div class="row">
+        <aside class="col-md-3 categories-panel">
+          <ul>
+            <li><a href="#">Jackets</a></li>
+            <li><a href="#">Boots</a></li>
+            <li><a href="#">T-shirts</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">New Arrivals</a></li>
+          </ul>
+        </aside>
+        <div class="col-md-9 products-panel">
+          <div class="product-grid">
+            <div class="product"><img src="https://picsum.photos/200/300?1" alt="Product 1"></div>
+            <div class="product"><img src="https://picsum.photos/200/300?2" alt="Product 2"></div>
+            <div class="product"><img src="https://picsum.photos/200/300?3" alt="Product 3"></div>
+            <div class="product"><img src="https://picsum.photos/200/300?4" alt="Product 4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Carousel -->
+    <section id="hero" class="row text-center">
+      <div class="carousel">
+        <div><img src="https://plus.unsplash.com/premium_photo-1708110920881-635419c3411f?w=1200" alt="Slider 1"></div>
+        <div><img src="https://images.unsplash.com/photo-1612731486606-2614b4d74921?w=1200" alt="Slider 2"></div>
+        <div><img src="https://images.unsplash.com/photo-1549298222-1c31e8915347?w=600" alt="Slider 3"></div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="row product-sections">
+      <div class="col-xs-12 product-container">
+        <img src="https://plus.unsplash.com/premium_photo-1671469876887-b2733ac9c785?w=600" alt="Product 1">
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600" alt="Product 2">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=600" alt="Product 3">
+      </div>
+      <div class="col-xs-12 text-center">
+        <button class="btn btn-info">Promocje</button>
+        <button class="btn btn-primary">Nowości</button>
+        <button class="btn btn-warning">Bestsellery</button>
+      </div>
+    </section>
+
+    <!-- Slider Widget -->
+    <div class="slider-wrapper">
+      <section id="slider-widget">
+        <div id="slider-left">
+          <h4>CHCESZ 5% ZNIŻKI NA SWOJE ZAKUPY?</h4>
+          <ul>
+            <li>Zapisz się do newslettera i bądź na bieżąco z nowościami</li>
+            <li>Promocje i oferty specjalne tylko dla subskrybentów</li>
+            <li>Nowe kolekcje ubrań i limitowane edycje</li>
+          </ul>
+          <div id="slider-left-arrow"></div>
+        </div>
+        <div id="slider-right-column">
+          <div id="slider-mid">
+            <div class="spectacledcoder-search-bar">
+              <input type="text" class="spectacledcoder-search-bar-input" placeholder="Wpisz produkt..." />
+              <img id="searchicon" src="https://img.icons8.com/sf-black/100/ffffff/search.png" width="22" height="22" />
+              <div class="spectacledcoder-dropdown">
+                <ul>
+                  <li>Koszulki damskie</li>
+                  <li>Spodnie męskie</li>
+                  <li>Buty sportowe</li>
+                  <li>Akcesoria</li>
+                  <li>Nowe kolekcje</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="slider-right">
+            <p style="font-size: 20px; margin: 12px 0;">Promocja:</p>
+            <p>Zapisz się do newslettera i odbierz <span style="font-weight:bold;">5% OFF</span></p>
+            <div id="slider-cta-block">
+              <button id="slider-primary" class="slider-cta">Zapisz się teraz</button>
+              <button id="slider-secondary" class="slider-cta">Sprawdź produkty</button>
+            </div>
+          </div>
         </div>
       </section>
-
-      <!-- Products Section -->
-<section class="row product-sections">
-  <div class="col-xs-12 product-container">
-    <img src="https://plus.unsplash.com/premium_photo-1671469876887-b2733ac9c785?w=600" alt="Product 1">
-    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600" alt="Product 2">
-    <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=600" alt="Product 3">
-  </div>
-  <div class="col-xs-12 text-center">
-    <button class="btn btn-info">Promocje</button>
-    <button class="btn btn-primary">Nowości</button>
-    <button class="btn btn-warning">Bestsellery</button>
-  </div>
-</section>
-
-
-      <!-- Slider Widget -->
-      <div class="slider-wrapper">
-        <section id="slider-widget">
-          <!-- Left Promotion -->
-          <div id="slider-left">
-            <h4>CHCESZ 5% ZNIŻKI NA SWOJE ZAKUPY?</h4>
-            <ul>
-              <li>Zapisz się do newslettera i bądź na bieżąco z nowościami</li>
-              <li>Promocje i oferty specjalne tylko dla subskrybentów</li>
-              <li>Nowe kolekcje ubrań i limitowane edycje</li>
-            </ul>
-            <div id="slider-left-arrow"></div>
-          </div>
-
-          <!-- Right Column: Search + Promo -->
-          <div id="slider-right-column">
-            <div id="slider-mid">
-              <div class="spectacledcoder-search-bar">
-                <input type="text" class="spectacledcoder-search-bar-input" placeholder="Wpisz produkt..." />
-                <img id="searchicon" src="https://img.icons8.com/sf-black/100/ffffff/search.png" width="22" height="22" />
-                <div class="spectacledcoder-dropdown">
-                  <ul>
-                    <li>Koszulki damskie</li>
-                    <li>Spodnie męskie</li>
-                    <li>Buty sportowe</li>
-                    <li>Akcesoria</li>
-                    <li>Nowe kolekcje</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div id="slider-right">
-              <p style="font-size: 20px; margin: 12px 0;">Promocja:</p>
-              <p>Zapisz się do newslettera i odbierz <span style="font-weight:bold;">5% OFF</span></p>
-              <div id="slider-cta-block">
-                <button id="slider-primary" class="slider-cta">Zapisz się teraz</button>
-                <button id="slider-secondary" class="slider-cta">Sprawdź produkty</button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
     </div>
+
   </main>
 
   <!-- Footer -->
@@ -362,10 +389,18 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
     $(document).ready(function(){
+      // Slick carousel
       $('.carousel').slick({
         autoplay: true,
         arrows: false,
         dots: true
+      });
+
+      // Show category page when menu item clicked
+      $('a:contains("Damskie buty skórzane")').click(function(e){
+        e.preventDefault(); // prevent default link
+        $('#category-page').slideDown(); // show category section
+        $('html, body').animate({ scrollTop: $('#category-page').offset().top }, 500); // scroll to section
       });
     });
   </script>
