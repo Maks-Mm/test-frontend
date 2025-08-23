@@ -1,39 +1,36 @@
-//test-frontend/less/_header.less
-header {
-  background: @primary-color;
+// _header.less
 
-  .navbar {
-    margin-bottom: 0;
-    border-radius: 0;
 
-    .navbar-brand {
-      color: @white;
-      font-weight: bold;
-      &:hover {
-        color: lighten(@secondary-color, 20%);
-      }
-    }
+header.navbar.navbar-top {
+  background-color: @primary-color !important;
+  border: none !important;
 
-    .nav > li > a {
-      color: @white;
-      &:hover {
-        background: darken(@primary-color, 5%);
-      }
-    }
-
-    &.navbar-top {
-      background-color: @primary-color;
-      border: none;
-
-      .nav > li > a {
-        color: @white;
-        font-weight: normal;
-      }
-      .nav > li > a:hover {
-        color: lighten(@secondary-color, 20%);
-        background: transparent;
-      }
+  .nav > li > a {
+    color: @white !important;
+    &:hover {
+      color: lighten(@secondary-color, 20%) !important;
+      background: transparent !important;
     }
   }
 }
 
+.navbar-default {
+  background: #fff !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08) !important;
+
+  .nav > li > a {
+    color: @primary-color !important;
+    &:hover { color: darken(@primary-color, 5%) !important; }
+  }
+
+  .navbar-nav.navbar-right > li > a {
+    font-size: 16px !important;
+  }
+
+  .navbar-brand img {
+    border-radius: 50% !important;
+    border: 2px solid @primary-color !important;
+    padding: 2px !important;
+  }
+}

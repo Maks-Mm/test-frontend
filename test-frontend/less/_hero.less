@@ -1,12 +1,26 @@
 #hero {
   margin-bottom: 30px;
+  padding: @padding-base * 2 0;
+  background: @white;
+  color: @text-color;
+  text-align: center;
+
+  .carousel {
+    min-height: @carousel-height;
+    width: 100%;
+  }
+
+  .slick-list, .slick-track { min-height: @carousel-height; }
 
   img {
     width: 100%;
+    height: auto;
+    max-height: @carousel-height;
+    object-fit: cover;
     border-radius: 8px;
   }
 
   .slick-dots li button:before {
-    color: #337ab7;
+    color: @primary-color;
   }
 }

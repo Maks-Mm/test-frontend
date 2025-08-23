@@ -1,0 +1,38 @@
+/* SPA Sections */
+.page-section {
+  display: none;
+
+  &.active { display: block; }
+}
+
+.categories-panel {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 12px 0;
+
+      a {
+        text-decoration: none;
+        color: @primary-color;
+
+        &:hover { color: darken(@primary-color, 10%); }
+      }
+    }
+  }
+}
+
+.products-panel {
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .product img {
+      width: 100%;
+      max-width: 200px;
+      object-fit: cover;
+    }
+  }
+}

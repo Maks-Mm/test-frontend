@@ -4,109 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zadanie Front-End SPA</title>
-  <link rel="stylesheet" href="css/style.css">
-
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Poppins&display=swap" rel="stylesheet">
-
-  <style>
-    /* Body */
-    body { margin: 0; font-family: 'Sen', sans-serif; background: linear-gradient(122deg, #d9d9d9 0%, #ffffff 100%); }
-    
-    /* Top Contact Bar */
-    header.navbar.navbar-top { background-color: #337ab7 !important; border: none !important; }
-    header.navbar.navbar-top .nav > li > a, header.navbar.navbar-top .navbar-nav > li > a { color: #fff !important; }
-    header.navbar.navbar-top .nav > li > a:hover, header.navbar.navbar-top .navbar-nav > li > a:hover { color: #b0e1ef !important; background-color: transparent !important; }
-
-    /* Main Navbar */
-    .navbar-default { background: #fff !important; border: none; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
-    .navbar-default .nav > li > a { color: #337ab7 !important; }
-    .navbar-default .nav > li > a:hover { background: #f5f5f5 !important; color: #2d6da3 !important; }
-    .navbar-default .navbar-nav.navbar-right > li > a { color: #337ab7 !important; font-size: 16px; }
-    .navbar-default .navbar-nav.navbar-right > li > a:hover { background: #f5f5f5 !important; color: #2d6da3 !important; }
-    .navbar-brand img { border-radius: 50%; border: 2px solid #337ab7; padding: 2px; }
-
-    /* Hero Carousel */
-    #hero { padding: 30px 0; text-align: center; background: white; }
-    #hero .carousel img { width: 100%; height: auto; max-height: 400px; object-fit: cover; }
-
-    /* Products Section */
-    .product-sections { margin-top: 30px; }
-    .product-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px; }
-    .product-container img { width: 30%; max-height: 520px; object-fit: cover; }
-    .product-sections .btn { margin: 0 5px; }
-
-    /* Slider Widget */
-    .slider-wrapper { display: flex; justify-content: center; margin: 40px 0; }
-    #slider-widget { display: flex; flex-wrap: wrap; gap: 12px; width: 95%; max-width: 1200px; }
-
-    #slider-left { width: 36%; background: linear-gradient(90deg, #1a5193 0%, #3696e5 100%); color: #fff; border-radius: 12px 0 0 12px; padding: 24px; position: relative; }
-    #slider-left h4 { font-size: 28px; margin-bottom: 16px; }
-    #slider-left ul { list-style: none; padding-left: 16px; }
-    #slider-left ul li { margin: 12px 0; font-size: 16px; }
-    #slider-left-arrow { position: absolute; top: 0; right: -40px; width: 40px; height: 100%; clip-path: polygon(0 0, 100% 50%, 0 100%); background: #3696e5; }
-
-    #slider-right-column { display: flex; flex-direction: column; width: 36%; margin-left: 10%; gap: 20px; }
-    #slider-mid { width: 100%; display: flex; justify-content: flex-end; align-items: center; }
-    .spectacledcoder-search-bar { position: relative; width: 100%; }
-    .spectacledcoder-search-bar-input { width: 100%; padding: 10px 40px; border-radius: 25px; border: none; background-color: #27292a; color: #fff; }
-    #searchicon { position: absolute; top: 50%; left: 12px; transform: translateY(-50%); }
-    .spectacledcoder-dropdown { position: absolute; top: 48px; width: 100%; max-height: 0; overflow: hidden; background: #27292a; border-radius: 0 0 12px 12px; transition: 0.3s; }
-    .spectacledcoder-dropdown ul { display: flex; flex-direction: column; padding: 0; margin: 0; }
-    .spectacledcoder-dropdown ul li { padding: 8px 16px; cursor: pointer; color: #fff; }
-    .spectacledcoder-dropdown ul li:hover { background: #363738; }
-    .spectacledcoder-search-bar:hover .spectacledcoder-dropdown { max-height: 200px; }
-
-    #slider-right { width: 100%; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(36,28,21,0.12); }
-    #slider-cta-block { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
-    .slider-cta { padding: 8px 16px; border-radius: 6px; cursor: pointer; border: none; font-weight: 500; }
-    #slider-primary { background: #ff8000; color: #fff; }
-    #slider-secondary { background: #fff; border: 2px solid #393A3D; color: #393A3D; }
-
-    /* Footer */
-    footer { background: #F6F6F6; padding: 40px 0; font-size: 14px; color: #333; text-align: center; }
-    footer ul { padding: 0; list-style: none; margin: 0 0 15px 0; }
-    footer li { display: inline-block; margin: 0 10px; }
-    footer a { color: inherit; text-decoration: none; opacity: 0.8; }
-    footer a:hover { opacity: 1; }
-    footer .social { margin-bottom: 20px; }
-    footer .social > a { font-size: 20px; width: 40px; height: 40px; line-height: 40px; display: inline-block; text-align: center; border-radius: 50%; border: 1px solid #ccc; margin: 0 5px; color: #333; opacity: 0.75; transition: all 0.3s ease; }
-    footer .social > a:hover { opacity: 0.9; transform: scale(1.1); }
-    footer .footer-break { border: 0; height: 2px; background-color: #ccc; margin: 20px 0; }
-    footer .copyright { margin: 0; font-size: 12px; color: #666; }
-
-    @media (max-width: 992px) { #slider-left, #slider-right-column { width: 100%; margin-left: 0; } #slider-widget { flex-direction: column; gap: 20px; } .product-container img { width: 80%; max-height: 400px; } }
-
-    /* SPA Sections */
-    .page-section { display: none; }
-    .page-section.active { display: block; }
-    .categories-panel ul { list-style: none; padding: 0; }
-    .categories-panel li { margin: 12px 0; }
-    .categories-panel a { text-decoration: none; color: #337ab7; }
-    .categories-panel a:hover { color: #2d6da3; }
-    .products-panel .product-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-    .products-panel .product img { width: 100%; max-width: 200px; object-fit: cover; }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
 
   <!-- Top Contact Bar -->
   <header class="navbar navbar-top">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li><a href="tel:+48123456789">tel: +48 123 456 789</a></li>
-        <li><a href="mailto:kontakt@mojastrona.pl">kontakt@mojastrona.pl</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Dostawa</a></li>
-      </ul>
-    </div>
-  </header>
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="tel:+48123456789">
+          <i class="bi bi-telephone-fill"></i> tel: +48 123 456 789
+        </a>
+      </li>
+      <li>
+        <a href="mailto:kontakt@mojastrona.pl">
+          <i class="bi bi-envelope-fill"></i> kontakt@mojastrona.pl
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+  <li>
+    <a href="#">
+      <i class="bi bi-truck"></i> Dostawa
+    </a>
+  </li>
+</ul>
+  </div>
+</header>
 
   <!-- Main Navbar -->
   <header class="navbar navbar-default">
