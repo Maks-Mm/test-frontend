@@ -131,8 +131,13 @@ header.navbar.navbar-top .nav > li > a:hover {
 }
 .category-page .products-panel .product-grid .product img {
   width: 100%;
-  border-radius: 8px;
+  aspect-ratio: 1/1;
   object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.category-page .products-panel .product-grid .product img:hover {
+  transform: scale(1.05);
 }
 @media (max-width: 768px) {
   .category-page .products-panel .product-grid .product {

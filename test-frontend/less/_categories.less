@@ -1,4 +1,6 @@
 //test-frontend/less/_categories.less
+
+
 .category-page {
   margin-top: 40px;
 
@@ -15,7 +17,12 @@
         a {
           text-decoration: none;
           color: #333;
-          &:hover { color: #337ab7; }
+          cursor: pointer;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #337ab7;
+          }
         }
       }
     }
@@ -29,10 +36,22 @@
 
       .product {
         width: calc(33.333% - 10px);
+        cursor: pointer;
+
         img {
           width: 100%;
-          border-radius: 8px;
+          max-width: 250px;
+          aspect-ratio: 1/1;    // square
           object-fit: cover;
+          border-radius: 8px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover, 
+        img:active, 
+        img:focus {
+          transform: scale(1.05);     // zoom effect
+          box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
       }
     }
