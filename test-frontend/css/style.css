@@ -56,21 +56,48 @@ header.navbar.navbar-top .nav > li > a:hover {
 .product-sections {
   margin: 40px 0;
 }
-.product-sections .product-container {
+.product-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 20px;
 }
-.product-sections .product-container img {
+.product-container img {
   width: 30%;
+  /* 3 per row on desktop */
+  max-width: 250px;
+  /* keeps them from getting too large */
+  aspect-ratio: 1/1;
+  /* ensures square thumbnails */
   border-radius: 8px;
-  max-height: 520px;
   object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
 }
-.product-sections .btn {
-  margin: 0 5px;
+.product-container img:hover {
+  transform: scale(1.05);
+}
+.categories-points {
+  margin: 20px 0;
+}
+.category-point {
+  display: inline-block;
+  background-color: #222;
+  /* replace with your @primary-color */
+  color: #fff;
+  /* replace with your @white */
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin: 0 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.category-point:hover {
+  background-color: #444;
+  /* slightly lighter hover color */
+  transform: scale(1.05);
 }
 .category-page {
   margin-top: 40px;
