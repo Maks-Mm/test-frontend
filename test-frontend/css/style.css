@@ -117,6 +117,8 @@ header.navbar.navbar-top .nav > li > a:hover {
 .category-page .categories-panel ul li a {
   text-decoration: none;
   color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 .category-page .categories-panel ul li a:hover {
   color: #337ab7;
@@ -128,16 +130,21 @@ header.navbar.navbar-top .nav > li > a:hover {
 }
 .category-page .products-panel .product-grid .product {
   width: calc(33.333% - 10px);
+  cursor: pointer;
 }
 .category-page .products-panel .product-grid .product img {
   width: 100%;
+  max-width: 250px;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.category-page .products-panel .product-grid .product img:hover {
+.category-page .products-panel .product-grid .product img:hover,
+.category-page .products-panel .product-grid .product img:active,
+.category-page .products-panel .product-grid .product img:focus {
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 768px) {
   .category-page .products-panel .product-grid .product {
@@ -285,36 +292,85 @@ header.navbar.navbar-top .nav > li > a:hover {
     max-height: 400px;
   }
 }
-/* SPA Sections */
-.page-section {
-  display: none;
+.bony-page,
+.category-page {
+  margin-top: 40px;
 }
-.page-section.active {
-  display: block;
+.bony-page .categories-panel,
+.category-page .categories-panel {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
 }
-.categories-panel ul {
+.bony-page .categories-panel ul,
+.category-page .categories-panel ul {
   list-style: none;
   padding: 0;
 }
-.categories-panel ul li {
-  margin: 12px 0;
+.bony-page .categories-panel ul li,
+.category-page .categories-panel ul li {
+  margin-bottom: 10px;
 }
-.categories-panel ul li a {
+.bony-page .categories-panel ul li a,
+.category-page .categories-panel ul li a {
   text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.bony-page .categories-panel ul li a:hover,
+.category-page .categories-panel ul li a:hover {
   color: #337ab7;
 }
-.categories-panel ul li a:hover {
-  color: #285f8f;
-}
-.products-panel .product-grid {
+.bony-page .products-panel .product-grid,
+.category-page .products-panel .product-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
 }
-.products-panel .product-grid .product img {
+.bony-page .products-panel .product-grid .product,
+.category-page .products-panel .product-grid .product {
+  width: calc(33.333% - 10px);
+  cursor: pointer;
+  text-align: center;
+}
+.bony-page .products-panel .product-grid .product img,
+.category-page .products-panel .product-grid .product img {
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
+  aspect-ratio: 1/1;
   object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bony-page .products-panel .product-grid .product img:hover,
+.category-page .products-panel .product-grid .product img:hover,
+.bony-page .products-panel .product-grid .product img:active,
+.category-page .products-panel .product-grid .product img:active,
+.bony-page .products-panel .product-grid .product img:focus,
+.category-page .products-panel .product-grid .product img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.bony-page .products-panel .product-grid .product .product-title,
+.category-page .products-panel .product-grid .product .product-title {
+  margin: 8px 0 4px 0;
+  font-weight: bold;
+}
+.bony-page .products-panel .product-grid .product .product-desc,
+.category-page .products-panel .product-grid .product .product-desc {
+  font-size: 14px;
+  color: #666;
+}
+@media (max-width: 768px) {
+  .bony-page .products-panel .product-grid .product,
+  .category-page .products-panel .product-grid .product {
+    width: 48%;
+  }
+  .bony-page .categories-panel,
+  .category-page .categories-panel {
+    margin-bottom: 20px;
+  }
 }
 footer {
   padding: 60px 0 40px 0;
@@ -394,4 +450,12 @@ footer .copyright {
     width: 80%;
     max-height: 400px;
   }
+}
+/* Hide all sections by default */
+.page-section {
+  display: none;
+}
+/* Show only the active section */
+.page-section.active {
+  display: block;
 }
