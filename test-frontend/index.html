@@ -34,7 +34,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
   <li>
-    <a href="#">
+    <a href="#post-delivery">
       <i class="bi bi-truck"></i> Dostawa
     </a>
   </li>
@@ -55,12 +55,12 @@
         <li><a href="#bestsellery">Bestsellery</a></li>
         <li><a href="#wyprzedaz">Wyprzedaż</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-      </ul>
+     <ul class="nav navbar-nav navbar-right">
+      <li><a href="#search"><span class="glyphicon glyphicon-search"></span></a></li>
+      <li><a href="#profile"><span class="glyphicon glyphicon-user"></span></a></li>
+      <li><a href="#favorites"><span class="glyphicon glyphicon-heart"></span></a></li>
+      <li><a href="#cart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+    </ul>
     </div>
   </header>
 
@@ -406,6 +406,37 @@
 </section>
 
 
+<!--SAP for Icons-->
+
+<section id="search" class="page-section">
+  <h2>Search Products</h2>
+  <p>Search functionality goes here...</p>
+</section>
+
+<section id="profile" class="page-section">
+  <h2>User Profile</h2>
+  <p>Login / Account details...</p>
+</section>
+
+<section id="favorites" class="page-section">
+  <h2>Your Favorites</h2>
+  <p>Saved products will appear here...</p>
+</section>
+
+<section id="cart" class="page-section">
+  <h2>Shopping Cart</h2>
+  <p>Items you added to cart...</p>
+</section>
+
+<section id="post-delivery" class="page-section">
+  <h2>Post - Delivery</h2>
+  <p>Post - Delivery...</p>
+</section>
+
+
+</section>
+
+
   </main>
 
   <!-- Footer -->
@@ -439,7 +470,7 @@
   $('.carousel').slick({ autoplay: true, arrows: false, dots: true });
 
   // SPA Navigation
-  $('.navbar-nav a[href^="#"]').click(function(e){
+  $('.navbar-nav a[href^="#"], .navbar-top a[href^="#"]').click(function(e){
     e.preventDefault();
     const target = $(this).attr('href');
 
