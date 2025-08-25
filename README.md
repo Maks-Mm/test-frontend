@@ -11,3 +11,5 @@ Jest to projekt frontendowy, który prezentuje stronę sklepu z sekcjami: nagł�
 - Klonowanie repozytorium:  
 ```bash
 git clone https://github.com/Maks-Mm/test-frontend.git
+
+## Command for start and compiling after addition or uddating to Codes : lessc less/style.less css/style.css
