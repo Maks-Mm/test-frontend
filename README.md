@@ -12,4 +12,4 @@ Jest to projekt frontendowy, który prezentuje stronę sklepu z sekcjami: nagł�
 ```bash
 git clone https://github.com/Maks-Mm/test-frontend.git
 
-## Command for start and compiling after addition or uddating to Codes : lessc less/style.less css/style.css
+The command lessc less/style.less css/style.css is used to compile a LESS file into a CSS file. It's already correct. You can use this command after making additions or updates to your style.less file to update your style.css file.
