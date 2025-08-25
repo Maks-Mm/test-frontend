@@ -13,3 +13,6 @@ Jest to projekt frontendowy, który prezentuje stronę sklepu z sekcjami: nagł�
 git clone https://github.com/Maks-Mm/test-frontend.git
 
 The command lessc less/style.less css/style.css is used to compile a LESS file into a CSS file. It's already correct. You can use this command after making additions or updates to your style.less file to update your style.css file.
+
+Jak uruchomic ? :
+Jeżeli chcesz uruchomić projekt z Visual Studio Code, naciśnij na plik HTML prawym przyciskiem myszy, po czym na górze znajdziesz opcję 'Open with Live Server', która przeniesie Cię do odpalonej strony w przeglądarce.
