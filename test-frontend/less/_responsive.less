@@ -1,6 +1,137 @@
-/* Responsive */
+//container categories
+
 @media (max-width: 992px) {
-  #slider-left, #slider-right-column { width: 100%; margin-left: 0; }
-  #slider-widget { flex-direction: column; gap: 20px; }
-  .product-container img { width: 80%; max-height: 400px; }
+  .navbar-default .container {
+    flex-direction: column;
+    align-items: center;       /* center content horizontally */
+    gap: 10px;                 /* spacing between brand, nav, icons */
+  }
+
+  .navbar-header {
+    margin-bottom: 8px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    li {
+      margin: 6px 0;
+      text-align: center;
+    }
+  }
+
+  .navbar-nav.navbar-right {
+    flex-direction: row;        /* icons in a row */
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 576px) {
+  .navbar-default .navbar-nav li a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .navbar-brand img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+//navbar 
+/* _responsive.less */
+@media (max-width: 992px) {
+  header.navbar.navbar-top .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ centers horizontally */
+    text-align: center;    /* ✅ text also centered */
+    gap: 8px;
+  }
+
+  header.navbar.navbar-top .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ centers nav items */
+    width: 100%;
+  }
+
+  header.navbar.navbar-top .nav > li {
+    width: auto;           /* don’t stretch full width */
+  }
+
+  header.navbar.navbar-top .nav > li > a {
+    display: inline-block; /* inline buttons instead of full row */
+    padding: 10px 0;
+    font-size: 16px;
+    border: none;          /* remove divider line */
+  }
+
+  /* move right-nav below first nav, still centered */
+  header.navbar.navbar-top .navbar-right {
+    margin-top: 8px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 576px) {
+  header.navbar.navbar-top .container {
+    gap: 6px;
+  }
+
+  header.navbar.navbar-top .nav > li > a {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
+
+
+//slider
+@media (max-width: 992px) {
+  #slider-widget {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  #slider-left,
+  #slider-right-column {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* make sure search bar goes on top */
+  #slider-right-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #slider-right-column #slider-mid {
+    order: -1; /* move search to top */
+    width: 100%;
+    z-index: 3;
+    position: relative;
+  }
+
+  #slider-left {
+    order: 0; /* stays under search */
+  }
+
+  #slider-right-column #slider-right {
+    order: 1; /* last element */
+    margin-top: 12px;
+  }
+
+  /* mobile scaling */
+  .product-container img {
+    width: 80%;
+    max-height: 400px;
+  }
 }
