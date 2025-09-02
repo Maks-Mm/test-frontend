@@ -74,3 +74,25 @@ $(document).ready(function () {
         });
     }
 });
+// Replace the Unsplash code with this simpler version:
+const productContainers = $('.product-container');
+
+productContainers.each(function(index, container) {
+    $(container).empty(); // clear existing images
+    
+    for (let i = 0; i < 3; i++) {
+        // Use fashion-related images from Picsum
+        const randomId = Math.floor(Math.random() * 100);
+        const img = $('<img>')
+            .attr('src', `https://picsum.photos/300/200?random=${randomId}`)
+            .attr('alt', 'Fashion Item')
+            .addClass('dynamic-image')
+            .css({
+                'width': '100%',
+                'height': 'auto',
+                'border-radius': '5px',
+                'margin-bottom': '10px'
+            });
+        $(container).append(img);
+    }
+});
