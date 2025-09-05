@@ -83,21 +83,29 @@ header.navbar.navbar-top .nav > li > a:hover {
 }
 .category-point {
   display: inline-block;
-  background-color: #222;
-  /* replace with your @primary-color */
-  color: #fff;
-  /* replace with your @white */
+  background-color: #f8f9fa;      /* Light neutral background */
+  color: #495057;                 /* Neutral dark gray text */
+  border: 1px solid #dee2e6;      /* Subtle border */
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 6px;             /* More subtle rounded corners */
   margin: 0 8px;
   cursor: pointer;
   font-weight: 500;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
 }
+
 .category-point:hover {
-  background-color: #444;
-  /* slightly lighter hover color */
-  transform: scale(1.05);
+  background-color: #e9ecef;      /* Slightly darker on hover */
+  border-color: #adb5bd;
+  transform: translateY(-1px);    /* More subtle hover effect */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.category-point.active {
+  background-color: #495057;      /* Dark background for active state */
+  color: #ffffff;
+  border-color: #495057;
 }
 .category-page {
   margin-top: 40px;

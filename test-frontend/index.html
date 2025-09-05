@@ -95,7 +95,7 @@
 
 </div>
 
-     <!-- Products Section -->
+   <!-- Products Section -->
 <div class="row product-sections">
   <!-- First 3 Images -->
   <div class="col-xs-12 product-container" id="product-row-1"></div>
@@ -112,43 +112,62 @@
 </div>
 
 <script>
-  // Controlled product dataset
+  // Fallback / local products array (imitation of API)
   const products = [
-  { src: "img1.jpg", alt: "Function A", category: "promocje", theme: 4, brand: "BrandX", type: "function" },
-  { src: "img2.jpg", alt: "Function B", category: "nowosci", theme: 4, brand: "BrandY", type: "function" },
-  { src: "img3.jpg", alt: "Function C", category: "bestsellery", theme: 4, brand: "BrandZ", type: "function" },
-  { src: "img4.jpg", alt: "Function D", category: "promocje", theme: 4, brand: "BrandX", type: "function" },
-  { src: "img5.jpg", alt: "Function E", category: "nowosci", theme: 4, brand: "BrandY", type: "function" },
-  { src: "img6.jpg", alt: "Function F", category: "bestsellery", theme: 4, brand: "BrandZ", type: "function" }
-];
-
+    { src: "img1.jpg", alt: "Function A", category: "promocje", theme: 4, brand: "BrandX", type: "function" },
+    { src: "img2.jpg", alt: "Function B", category: "nowosci", theme: 4, brand: "BrandY", type: "function" },
+    { src: "img3.jpg", alt: "Function C", category: "bestsellery", theme: 4, brand: "BrandZ", type: "function" },
+    { src: "img4.jpg", alt: "Function D", category: "promocje", theme: 4, brand: "BrandX", type: "function" },
+    { src: "img5.jpg", alt: "Function E", category: "nowosci", theme: 4, brand: "BrandY", type: "function" },
+    { src: "img6.jpg", alt: "Function F", category: "bestsellery", theme: 4, brand: "BrandZ", type: "function" }
+  ];
 
   // Function to render exactly 3 images per row
-  function renderRow(rowId, filterFunc) {
-    const row = document.getElementById(rowId);
-    row.innerHTML = ""; // Clear previous images
-    const filtered = products.filter(filterFunc).slice(0, 3); // First 3 images
-    filtered.forEach(p => {
+  function renderAll(filterFunc, data = products) {
+    const row1 = document.getElementById("product-row-1");
+    const row2 = document.getElementById("product-row-2");
+
+    // Filter images according to the function
+    const filtered = data.filter(filterFunc).slice(0, 6); // max 6 images
+    const firstRow = filtered.slice(0, 3);
+    const secondRow = filtered.slice(3, 6);
+
+    // Render first row
+    row1.innerHTML = "";
+    firstRow.forEach(p => {
       const img = document.createElement("img");
       img.src = p.src;
       img.alt = p.alt;
-      row.appendChild(img);
+      row1.appendChild(img);
+    });
+
+    // Render second row
+    row2.innerHTML = "";
+    secondRow.forEach(p => {
+      const img = document.createElement("img");
+      img.src = p.src;
+      img.alt = p.alt;
+      row2.appendChild(img);
     });
   }
 
-  // Initial render (theme 4, fixed 3 + 3)
-  renderRow("product-row-1", p => p.theme === 4 && ["promocje", "nowosci", "bestsellery"].includes(p.category));
-  renderRow("product-row-2", p => p.theme === 4 && ["promocje", "nowosci", "bestsellery"].includes(p.category));
+  // Initial rendering: theme 4 + type "function"
+  renderAll(p => p.theme === 4 && p.type === "function");
 
-  // Optional: filtering by category
+  // Category filtering
   document.querySelectorAll(".category-point").forEach(span => {
     span.addEventListener("click", () => {
       const cat = span.getAttribute("data-category");
-      renderRow("product-row-1", p => p.theme === 4 && p.category === cat);
-      renderRow("product-row-2", p => p.theme === 4 && p.category === cat);
+      renderAll(p => p.theme === 4 && p.type === "function" && p.category === cat);
     });
   });
+
+  // Optional: Fetch from real API if available
+  // fetch("/api/products")
+  //   .then(res => res.json())
+  //   .then(data => renderAll(p => p.theme === 4 && p.type === "function", data));
 </script>
+
 
 
 
